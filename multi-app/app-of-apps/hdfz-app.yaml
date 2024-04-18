@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: hdfz-app
+  # namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/jameelkaisar/argocd-test.git
+    targetRevision: HEAD
+    path: ./multi-app/manifests/hdfz-app
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: hdfz-app
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    # automated:
+    #   prune: true
+    #   selfHeal: true

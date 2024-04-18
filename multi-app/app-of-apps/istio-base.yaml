@@ -1,10 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: istio-app
+  name: istio-base
   # namespace: argocd
   annotations:
-    argocd.argoproj.io/sync-wave: "-10"
+    argocd.argoproj.io/sync-wave: "-11"
 spec:
   project: default
   source:
@@ -12,7 +12,7 @@ spec:
     chart: base
     targetRevision: 1.21.1
     helm:
-      releaseName: istio-app
+      releaseName: istio-base
       # valueFiles:
       #   - values.yaml
   destination:

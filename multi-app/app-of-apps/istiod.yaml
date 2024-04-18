@@ -13,8 +13,8 @@ spec:
     targetRevision: 1.21.1
     helm:
       releaseName: istiod
-      # valueFiles:
-      #   - values.yaml
+      valueFiles:
+        - ./../values/istiod/values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: istio-system

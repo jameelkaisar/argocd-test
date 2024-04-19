@@ -6,9 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/LukeMwila/microservices-for-kubernetes.git
+    repoURL: https://github.com/jameelkaisar/argocd-test.git
     targetRevision: HEAD
-    path: ./helm/products
+    path: ./multi-app/manifests/my-microservice/_charts/products
     # targetRevision: main
     helm:
       releaseName: my-products

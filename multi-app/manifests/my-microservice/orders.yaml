@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-orders
+  # namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/LukeMwila/microservices-for-kubernetes.git
+    targetRevision: HEAD
+    path: ./helm/orders
+    # targetRevision: main
+    helm:
+      releaseName: my-orders
+      valueFiles:
+        - values.yaml
+      parameters:
+      - name: namespace
+        value: my-microservice
+      - name: autoscaling.enabled
+        value: 'true'
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: my-microservice
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true

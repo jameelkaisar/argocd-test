@@ -12,8 +12,9 @@ spec:
     # targetRevision: main
     helm:
       releaseName: nginx-helm
-      valueFiles:
-        - values.yaml
+      parameters:
+      - name: replicaCount
+        value: '2'
   destination:
     server: https://kubernetes.default.svc
     namespace: nginx-helm

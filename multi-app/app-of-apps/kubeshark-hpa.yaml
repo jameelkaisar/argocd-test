@@ -1,24 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kubeshark
+  name: kubeshark-hpa
   # namespace: argocd
 spec:
   project: default
   source:
-    repoURL: https://helm.kubeshark.co
-    chart: kubeshark
-    targetRevision: '52.2.30'
-    helm:
-      releaseName: kubeshark-helm
+    repoURL: https://github.com/jameelkaisar/argocd-test.git
+    targetRevision: HEAD
+    path: ./multi-app/manifests/kubeshark-hpa
   destination:
     server: https://kubernetes.default.svc
     namespace: kubeshark
-  ignoreDifferences:
-  - group: apps
-    kind: Deployment
-    jsonPointers:
-    - /spec/replicas
   syncPolicy:
     syncOptions:
     - CreateNamespace=true

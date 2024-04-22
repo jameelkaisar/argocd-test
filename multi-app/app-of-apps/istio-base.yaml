@@ -1,23 +1,26 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: istio-gateway
+  name: istio-base
   # namespace: argocd
   annotations:
-    argocd.argoproj.io/sync-wave: "-9"
+    argocd.argoproj.io/sync-wave: "-11"
 spec:
   project: default
   source:
     repoURL: https://istio-release.storage.googleapis.com/charts
-    chart: gateway
+    chart: base
     targetRevision: 1.21.1
     helm:
-      releaseName: istio-gateway
+      releaseName: istio-base
+      parameters:
+      - name: defaultRevision
+        value: default
       # valueFiles:
-      #   - values.yaml
+      #   - ./_values/istiod/values.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: istio-ingress
+    namespace: istio-system
   syncPolicy:
     syncOptions:
     - CreateNamespace=true

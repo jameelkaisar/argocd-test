@@ -13,7 +13,7 @@ spec:
     path: ./multi-app/app-of-apps
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd-old
+    namespace: argocd
   syncPolicy:
     syncOptions:
     - CreateNamespace=true

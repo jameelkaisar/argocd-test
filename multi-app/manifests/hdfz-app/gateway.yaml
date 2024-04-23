@@ -5,7 +5,7 @@ metadata:
   # namespace: hdfz-app
 spec:
   selector:
-    istio: ingressgateway
+    istio: istio-ingressgateway
   servers:
   - hosts:
     - "*"

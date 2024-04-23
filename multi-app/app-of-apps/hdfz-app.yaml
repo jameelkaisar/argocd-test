@@ -15,6 +15,9 @@ spec:
     server: https://kubernetes.default.svc
     namespace: hdfz-app
   syncPolicy:
+    managedNamespaceMetadata:
+      labels:
+        istio-injection: enabled
     syncOptions:
     - CreateNamespace=true
     automated:

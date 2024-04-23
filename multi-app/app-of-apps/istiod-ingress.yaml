@@ -14,7 +14,10 @@ spec:
     chart: gateway
     targetRevision: 1.21.1
     helm:
-      releaseName: istio-ingress
+      releaseName: istio-ingressgateway
+      parameters:
+      - name: service.type
+        value: NodePort
       # valueFiles:
       #   - values.yaml
   destination:

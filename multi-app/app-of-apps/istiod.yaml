@@ -3,8 +3,8 @@ kind: Application
 metadata:
   name: istiod
   # namespace: argocd
-  finalizers:
-  - resources-finalizer.argocd.argoproj.io
+  # Non-Cascade Delete
+  finalizers: null
   annotations:
     argocd.argoproj.io/sync-wave: "-10"
 spec:

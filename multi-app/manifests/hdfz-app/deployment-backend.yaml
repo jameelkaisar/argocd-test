@@ -1,8 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hdfz-backend
-  # namespace: hdfz-app
+  name: hdfz-backend-v1
+  namespace: hdfz-app
   labels:
     app: hdfz
     type: backend

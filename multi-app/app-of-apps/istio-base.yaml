@@ -17,7 +17,7 @@ spec:
       releaseName: istio-base
       parameters:
       - name: defaultRevision
-        value: default
+        value: hdfz
       # valueFiles:
       #   - ./_values/istiod/values.yaml
   destination:

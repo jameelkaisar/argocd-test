@@ -8,9 +8,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/jameelkaisar/argocd-test.git
+    repoURL: https://github.com/jameelkaisar/argocd-upgrade.git
     targetRevision: HEAD
-    path: ./multi-app/manifests/hdfz-app
+    path: ./manifests/hdfz-app
   destination:
     server: https://kubernetes.default.svc
     namespace: hdfz-app

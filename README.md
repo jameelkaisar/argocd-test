@@ -1,2 +1,2 @@
-# argocd-test
-ArgoCD Test Repo
+# ArgoCD Upgrade
+ArgoCD Installation and Upgrade (GitOps using ArgoCD)
